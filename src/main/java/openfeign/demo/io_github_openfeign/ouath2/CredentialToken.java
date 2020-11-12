@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class CredentialToken {
-	
-	public String access_token;
-	public String token_type;
+
+	private String access_token;
 }

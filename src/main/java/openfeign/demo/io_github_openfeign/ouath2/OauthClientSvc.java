@@ -3,7 +3,9 @@ package openfeign.demo.io_github_openfeign.ouath2;
 import feign.Feign;
 import feign.auth.BasicAuthRequestInterceptor;
 import feign.gson.GsonDecoder;
+import feign.gson.GsonEncoder;
 import lombok.Setter;
+import openfeign.demo.io_github_openfeign.AbstractFormEncoder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -35,10 +37,11 @@ public class OauthClientSvc {
 		BasicAuthRequestInterceptor interceptor = new BasicAuthRequestInterceptor(clientId,
 				clientSecret);
 		Oauth2Client credential = Feign.builder()
+				.encoder(new AbstractFormEncoder(new GsonEncoder()))
 				.decoder(new GsonDecoder())
 				.requestInterceptor(interceptor)
 				.target(Oauth2Client.class, uri);
-		return credential.getToken(username, password);
+		return credential.getToken(grantType, username, password);
 	}
-	
 }
+

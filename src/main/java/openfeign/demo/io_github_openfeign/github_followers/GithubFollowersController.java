@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/v1/followers")
 public class GithubFollowersController {
 	
-	private GithubFollowersSvc githubFollowersSvc;
+	private final GithubFollowersSvc githubFollowersSvc;
 	
 	@Autowired
 	public GithubFollowersController(GithubFollowersSvc githubFollowersSvc) {
