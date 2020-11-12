@@ -24,7 +24,6 @@ ext {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     compile group: 'io.github.openfeign', name: 'feign-core', version: '10.9'
     compile group: 'com.netflix.feign', name: 'feign-gson', version: '8.14.3'
     compileOnly 'org.projectlombok:lombok'
