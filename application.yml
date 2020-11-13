@@ -1,9 +1,0 @@
-app:
-  credentials:
-    grant_type: "password"
-    authorization: "your basic auth"
-    client_id: "your client id"
-    client_secret: "your client secret"
-  uri_backend: "http://localhost:8081"
-server:
-  port: 8082
