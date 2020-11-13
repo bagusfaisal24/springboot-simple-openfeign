@@ -6,6 +6,7 @@ import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
 import lombok.Setter;
 import openfeign.demo.io_github_openfeign.AbstractFormEncoder;
+import openfeign.demo.io_github_openfeign.StashErrorDecoder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +40,7 @@ public class OauthClientSvc {
 		Oauth2Client credential = Feign.builder()
 				.encoder(new AbstractFormEncoder(new GsonEncoder()))
 				.decoder(new GsonDecoder())
+				.errorDecoder(new StashErrorDecoder())
 				.requestInterceptor(interceptor)
 				.target(Oauth2Client.class, uri);
 		return credential.getToken(grantType, username, password);
