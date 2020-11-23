@@ -10,18 +10,13 @@ import openfeign.demo.io_github_openfeign.StashErrorDecoder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class OauthClientSvc {
 	
 	@Value("${app.credentials.grant_type}")
 	@Setter
 	private String grantType;
-	
-	@Value("${app.credentials.authorization}")
-	@Setter
-	private String authorization;
-	
+
 	@Value("${app.credentials.client_id}")
 	@Setter
 	private String clientId;

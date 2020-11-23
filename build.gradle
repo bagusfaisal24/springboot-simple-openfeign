@@ -28,6 +28,8 @@ dependencies {
     compile group: 'com.netflix.feign', name: 'feign-gson', version: '8.14.3'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
